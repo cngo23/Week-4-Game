@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Street Fighter RPG Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Street Fighter</h1>
+            <p class="lead">Lets Fight!</p>
+        </div>
+    </div>
+    <!-- jumbo ends here -->
+    <div class="container-fluid gameplay">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>Select your Fighter</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div id="characterList">
+                   <div id="Ryu" class="characterContainer" data-character-index="0">
+                        <p>Ryu</p>
+                        <img src="assets/images/Ryu.gif">
+                        <p>HP: 160</p>
+                    </div>
+                    <div class="characterContainer" data-character-index="1">
+                        <p>Chun-Li</p>
+                        <img src="assets/images/Chun_Li.gif">
+                        <p>HP: 140</p>
+                    </div>
+                    <div class="characterContainer" data-character-index="2">
+                        <p>Bison</p>
+                        <img src="assets/images/Bison.gif">
+                        <p>HP: 200</p>
+                    </div>
+                    <div class="characterContainer" data-character-index="3">
+                        <p>Sagat</p>
+                        <img src="assets/images/Sagat.gif">
+                        <p>HP: 180</p>
+                    </div>
+                    <div class="characterContainer" data-character-index="4">
+                        <p>Blanka</p>
+                        <img src="assets/images/Blanka.gif">
+                        <p>HP: 120</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h5>My Player</h5>
+                <div id="myPlayer">
+                    <p>this is my player</p>
+
+                </div>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-2 text-center">
+                <div id="attack">
+                        <button type="button" class="btn btn-danger btn-lg text-center" id="attackButton">Attack!</button>
+                                                                      
+                </div>
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-4 text-center">
+                <h5>Opponent</h5>
+                <div id="challenger">
+                    <p>this is the challenger</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div id="defeated">
+                    <p>defeated</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
