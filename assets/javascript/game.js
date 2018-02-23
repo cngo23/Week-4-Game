@@ -65,6 +65,13 @@ $(document).ready(function () {
 
     var myPlayer = "";
     var challenger = "";
+    var dmgFactor = [];
+
+    $(".RyuHp").html(RyuObject.health);
+    $(".ChunLiHp").html(ChunLiObject.health);
+    $(".BisonHp").html(BisonObject.health);
+    $(".SagatHp").html(SagatObject.health);
+    $(".BlankaHp").html(BlankaObject.health);
 
     function startGame() {
         //hides dead characters
@@ -97,21 +104,21 @@ $(document).ready(function () {
             myPlayer = RyuObject.RyuPlayer;
             RyuObject.RyuPlayer.show();
             RyuObject.Ryu.hide();
-        } else if (myPlayer !== ""){
+        } else if (myPlayer !== "") {
             $(RyuObject.RyuChallenger).show();
             $(RyuObject.Ryu).hide();
             challenger = RyuObject.RyuChallenger;
-            
-        } 
+        }
+
 
     });
 
     $(ChunLiObject.ChunLi).click(function () {
-        if (myPlayer === "") { 
+        if (myPlayer === "") {
             ChunLiObject.ChunLiPlayer.show();
             ChunLiObject.ChunLi.hide();
             myPlayer = ChunLiObject.ChunLiPlayer;
-        } else if (myPlayer !== ""){
+        } else if (myPlayer !== "") {
             $(ChunLiObject.ChunLiChallenger).show();
             $(ChunLiObject.ChunLi).hide();
             challenger = ChunLiObject.ChunLiChallenger;
@@ -125,7 +132,7 @@ $(document).ready(function () {
             myPlayer = BisonObject.BisonPlayer;
             BisonObject.BisonPlayer.show();
             BisonObject.Bison.hide();
-        } else if (myPlayer !== ""){
+        } else if (myPlayer !== "") {
             $(BisonObject.BisonChallenger).show();
             $(BisonObject.Bison).hide();
             challenger = BisonObject.BisonChallenger;
@@ -138,7 +145,7 @@ $(document).ready(function () {
             myPlayer = SagatObject.SagatPlayer;
             SagatObject.SagatPlayer.show();
             SagatObject.Sagat.hide();
-        } else if (myPlayer !== ""){
+        } else if (myPlayer !== "") {
             $(SagatObject.SagatChallenger).show();
             $(SagatObject.Sagat).hide();
             challenger = SagatObject.SagatChallenger;
@@ -151,13 +158,38 @@ $(document).ready(function () {
             myPlayer = BlankaObject.BlankaPlayer;
             BlankaObject.BlankaPlayer.show();
             BlankaObject.Blanka.hide();
-        } else if (myPlayer !== ""){
+        } else if (myPlayer !== "") {
             $(BlankaObject.BlankaChallenger).show();
             $(BlankaObject.Blanka).hide();
             challenger = BlankaObject.BlankaChallenger;
         }
 
     });
+
+    
+    $("#attackButton").click(function () {
+        if(myPlayer = RyuObject.RyuPlayer){
+            BisonObject.health -= RyuObject.attack;
+            RyuObject.heatlh -= BisonObject.counterAttack;  
+        }
+
+//initial thoughts
+        if(myPlayer !== "" && challenger!==""){
+            challenger.health -= myPlayer.attack;
+            myPlayer.heatlh -= challenger.counterAttack;
+           
+
+        }
+
+       
+        
+      
+      
+
+
+    })
+
+
 
 
 
