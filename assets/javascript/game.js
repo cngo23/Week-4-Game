@@ -13,16 +13,16 @@ $(document).ready(function () {
             RyuDead: $("#RyuDead"),
             picked: false
         },
-        Chun_LiObject = {
-            name: 'Chun-Li',
+        ChunLiObject = {
+            name: "Chun-Li",
             health: 140,
             attack: 15,
             imageUrl: "assets/images/Chun_Li.gif",
             counterAttack: 25,
-            Chun_Li: $("#Chun-Li"),
-            Chun_LiPlayer: $("#Chun-LiPlayer"),
-            Chun_LiChallenger: $("#Chun-LiChallenger"),
-            Chun_LiDead: $("#Chun-LiDead"),
+            ChunLi: $("#Chun-Li"),
+            ChunLiPlayer: $("#Chun-LiPlayer"),
+            ChunLiChallenger: $("#Chun-LiChallenger"),
+            ChunLiDead: $("#Chun-LiDead"),
             picked: false
         },
         BisonObject = {
@@ -63,27 +63,27 @@ $(document).ready(function () {
         },
     ];
 
-    var myPlayer;
-    var challenger;
+    var myPlayer = "";
+    var challenger = "";
 
     function startGame() {
         //hides dead characters
         RyuObject.RyuDead.hide();
-        Chun_LiObject.Chun_LiDead.hide();
+        ChunLiObject.ChunLiDead.hide();
         BisonObject.BisonDead.hide();
         SagatObject.SagatDead.hide();
         BlankaObject.BlankaDead.hide();
 
         //hides challengers
         RyuObject.RyuChallenger.hide();
-        Chun_LiObject.Chun_LiChallenger.hide();
+        ChunLiObject.ChunLiChallenger.hide();
         BisonObject.BisonChallenger.hide();
         SagatObject.SagatChallenger.hide();
         BlankaObject.BlankaChallenger.hide();
 
         //hide myPlayer
         RyuObject.RyuPlayer.hide();
-        Chun_LiObject.Chun_LiPlayer.hide();
+        ChunLiObject.ChunLiPlayer.hide();
         BisonObject.BisonPlayer.hide();
         SagatObject.SagatPlayer.hide();
         BlankaObject.BlankaPlayer.hide();
@@ -93,49 +93,75 @@ $(document).ready(function () {
 
 
     $(RyuObject.Ryu).click(function () {
-        if (RyuObject.picked === false) {
-            myPlayer = RyuPlayer;
+        if (myPlayer === "") {
+            myPlayer = RyuObject.RyuPlayer;
             RyuObject.RyuPlayer.show();
             RyuObject.Ryu.hide();
+        } else if (myPlayer !== ""){
+            $(RyuObject.RyuChallenger).show();
+            $(RyuObject.Ryu).hide();
+            challenger = RyuObject.RyuChallenger;
+            
+        } 
+
+    });
+
+    $(ChunLiObject.ChunLi).click(function () {
+        if (myPlayer === "") { 
+            ChunLiObject.ChunLiPlayer.show();
+            ChunLiObject.ChunLi.hide();
+            myPlayer = ChunLiObject.ChunLiPlayer;
+        } else if (myPlayer !== ""){
+            $(ChunLiObject.ChunLiChallenger).show();
+            $(ChunLiObject.ChunLi).hide();
+            challenger = ChunLiObject.ChunLiChallenger;
         }
 
     });
 
 
-    $(Chun_LiObject.Chun_Li).click(function () {
-        if (Chun_LiObject.picked === false) {
-            myPlayer = Chun_Li;
-            Chun_LiObject.Chun_LiPlayer.show();
-            Chun_LiObject.Chun_Li.hide();
-        }
-    })
-
     $(BisonObject.Bison).click(function () {
-        if (BisonObject.picked === false) {
-            myPlayer = BisonPlayer;
+        if (myPlayer === "") {
+            myPlayer = BisonObject.BisonPlayer;
             BisonObject.BisonPlayer.show();
             BisonObject.Bison.hide();
+        } else if (myPlayer !== ""){
+            $(BisonObject.BisonChallenger).show();
+            $(BisonObject.Bison).hide();
+            challenger = BisonObject.BisonChallenger;
         }
 
     });
 
     $(SagatObject.Sagat).click(function () {
-        if (SagatObject.picked === false) {
-            myPlayer = SagatPlayer;
+        if (myPlayer === "") {
+            myPlayer = SagatObject.SagatPlayer;
             SagatObject.SagatPlayer.show();
             SagatObject.Sagat.hide();
+        } else if (myPlayer !== ""){
+            $(SagatObject.SagatChallenger).show();
+            $(SagatObject.Sagat).hide();
+            challenger = SagatObject.SagatChallenger;
         }
 
     });
 
     $(BlankaObject.Blanka).click(function () {
-        if (BlankaObject.picked === false) {
-            myPlayer = BlankaPlayer;
+        if (myPlayer === "") {
+            myPlayer = BlankaObject.BlankaPlayer;
             BlankaObject.BlankaPlayer.show();
             BlankaObject.Blanka.hide();
+        } else if (myPlayer !== ""){
+            $(BlankaObject.BlankaChallenger).show();
+            $(BlankaObject.Blanka).hide();
+            challenger = BlankaObject.BlankaChallenger;
         }
 
     });
+
+
+
+
 
 
 
