@@ -29,6 +29,18 @@ img {
 	
 }
 
+.challengers {
+    border: solid rgb(206, 9, 9);
+}
+
+.myPlayer {
+    border: solid rgb(8, 8, 202);
+}
+
+.dead {
+    border: solid rgb(2, 117, 63);
+}
+
 <div class="characterContainer" data-character-index="0">
 <p>Ryu</p>
 <img src="assets/images/Ryu.gif">
